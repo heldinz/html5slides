@@ -10,7 +10,8 @@
   URL: http://code.google.com/p/html5slides/
 */
 
-var PERMANENT_URL_PREFIX = 'http://html5-slides-template.googlecode.com/git/';
+//var PERMANENT_URL_PREFIX = 'http://html5-slides-template.googlecode.com/git/';
+var PERMANENT_URL_PREFIX = '../';
 
 var SLIDE_CLASSES = ['far-past', 'past', 'current', 'next', 'far-next'];
 
@@ -553,12 +554,19 @@ function addFontStyle() {
 };
 
 function addGeneralStyle() {
+
   var el = document.createElement('link');
-  el.rel = 'stylesheet';
+  el.rel = 'stylesheet/less';
   el.type = 'text/css';
-  el.href = PERMANENT_URL_PREFIX + 'styles.css';
+  el.href = PERMANENT_URL_PREFIX + 'styles.less';
+  el.media = "all";
   document.body.appendChild(el);
-  
+
+  var el = document.createElement('script');
+  el.src = PERMANENT_URL_PREFIX + 'less-1.2.2.min.js';
+  el.type = 'text/javascript';
+  document.body.appendChild(el);
+
   var el = document.createElement('meta');
   el.name = 'viewport';
   el.content = 'width=1100,height=750';
@@ -611,6 +619,7 @@ function initialize() {
   } else {
     document.addEventListener('DOMContentLoaded', handleDomLoaded, false);
   }
+  
 }
 
 // If ?debug exists then load the script relative instead of absolute
