@@ -284,9 +284,6 @@ body {
     }
 }
 
-
-
-
 /* Clickable/tappable areas */
 
 .slide-area {
@@ -400,7 +397,20 @@ ul {
         margin-left: -.75em;
         position: absolute;
     }
+    &.no-bullet::before {
+      content: '';
+    }
+    pre.compact-top {
+      margin-top: .5em;
+    }       
+    pre.compact-bottom {
+      margin-bottom: .5em;
+    }
   }
+}
+
+dd {
+  margin-bottom: .5em;
 }
 
 pre {
@@ -421,6 +431,21 @@ pre {
   box-shadow: inset 0 2px 6px rgba(0, 0, 0, .1);
 
   overflow: hidden;
+  
+  &.wrap {
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */       
+  }
+  
+  &.compact-top {
+    margin-top: 0;
+  }
+  &.compact-bottom {
+    margin-bottom: 0;
+  }
 }
 
 code {
@@ -532,6 +557,14 @@ div.author {
   &::before {
     content: '—';
   }
+}
+
+div.questions {
+  display: block;
+  font-size: 60px;
+  line-height: 72px;
+  margin-top: 200px;
+  text-align: center;
 }
 
 /* Builds */

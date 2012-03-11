@@ -516,6 +516,18 @@ function handleBodyKeyDown(event) {
       }
       event.preventDefault();
       break;
+      
+    case 36: // home key
+      curSlide = 0;
+      updateSlides();
+      event.preventDefault();
+      break;
+      
+    case 35: // end key
+      curSlide = slideEls.length - 1
+      updateSlides();
+      event.preventDefault();
+      break;
   }
 };
 
