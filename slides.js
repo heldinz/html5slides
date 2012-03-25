@@ -11,6 +11,7 @@
 */
 
 var PERMANENT_URL_PREFIX = 'http://html5-slides-template.googlecode.com/git/';
+//var PERMANENT_URL_PREFIX = '../';
 
 var SLIDE_CLASSES = ['far-past', 'past', 'current', 'next', 'far-next'];
 
@@ -567,15 +568,9 @@ function addFontStyle() {
 function addGeneralStyle() {
 
   var el = document.createElement('link');
-  el.rel = 'stylesheet/less';
+  el.rel = 'stylesheet';
   el.type = 'text/css';
-  el.href = PERMANENT_URL_PREFIX + 'styles.less';
-  el.media = "all";
-  document.body.appendChild(el);
-
-  var el = document.createElement('script');
-  el.src = PERMANENT_URL_PREFIX + 'less-1.2.2.min.js';
-  el.type = 'text/javascript';
+  el.href = PERMANENT_URL_PREFIX + 'styles.css';
   document.body.appendChild(el);
 
   var el = document.createElement('meta');
