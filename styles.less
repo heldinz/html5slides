@@ -307,27 +307,25 @@
       margin-left: @slide-next-margin-left;
     }
 
-    b {
-      font-weight: 600;
+    .source {
+       position: absolute;
+       left: 60px;
+       top: 644px;
+       padding-right: 175px;
+
+       font-size: 15px;
+       letter-spacing: 0;
+       line-height: 18px;
     }
 
-    .blue {
-      color: rgb(0, 102, 204);
-    }
-    .yellow {
-      color: rgb(255, 211, 25);
-    }
-    .green {
-      color: rgb(0, 138, 53);
-    }
-    .red {
-      color: rgb(255, 0, 0);
-    }
-    .black {
-      color: black;
-    }
-    .white {
-      color: white;
+    h2 {
+        .heading();
+        font-size: 45px;
+        line-height: 45px;
+        position: absolute;
+        bottom: 150px;
+        padding-right: 40px;
+        letter-spacing: -2px;
     }
 
     a {
@@ -347,33 +345,6 @@
       &:first-child {
         margin-top: 0;
       }
-    }
-
-    h1 {
-        .heading();
-        font-size: 60px;
-        line-height: 60px;
-        margin-top: 200px;
-        padding-right: 40px;
-        letter-spacing: -3px;
-    }
-
-    h2 {
-        .heading();
-        font-size: 45px;
-        line-height: 45px;
-        position: absolute;
-        bottom: 150px;
-        padding-right: 40px;
-        letter-spacing: -2px;
-    }
-
-    h3 {
-        .heading();
-        font-size: 30px;
-        line-height: 36px;
-        padding-right: 40px;
-        letter-spacing: -1px;
     }
 
     ul {
@@ -524,6 +495,201 @@
       line-height: 18px;
     }
 
+    div.questions {
+      display: block;
+      font-size: 60px;
+      line-height: 72px;
+      margin-top: 200px;
+      text-align: center;
+    }
+
+    /* Builds */
+    .build > * {
+      .build-transition();
+    }
+    .to-build {
+      opacity: 0;
+    }
+}
+
+/* Print version starts */
+@media print {
+    @page {
+        size: A4 landscape;
+        margin-left: 2.8cm;
+        margin-right: 2.8cm;
+        margin-top: 1.1cm;
+        margin-bottom: 1.1cm;
+    }
+    article {
+        page-break-after: always;
+        margin: auto;
+    }
+    article.next, article.past {
+        display: block;
+    }
+    article.biglogo, article.questions {
+        display: none;
+    }
+    body {
+        display: block !important;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 16pt;
+    }
+    article {
+        &.smaller {
+            p, ul {
+                font-size: 14pt;
+                line-height: 16pt;
+                letter-spacing: 0;
+            }
+            table {
+              font-size: 14pt;
+              line-height: 16pt;
+              letter-spacing: 0;
+            }
+            pre {
+              font-size: 10pt;
+              line-height: 12pt;
+              letter-spacing: 0;
+            }
+            q {
+              font-size: 24pt;
+              line-height: 28pt;
+              &::before, &::after {
+                font-size: 36pt;
+              }
+            }
+        }
+    }
+    i {
+        display: inline;
+        font-style: italic;
+        color: black;
+    }
+    a {
+      color: rgb(0, 102, 204);
+    }
+    pre {
+      font-family: 'Droid Sans Mono', 'Courier New', monospace;
+      color: black;
+      border: 1px solid rgb(224, 224, 224);
+      overflow: hidden;
+      padding: 5px 10px;
+      font-size: 12pt;
+      &.wrap {
+        white-space: pre-wrap; /* css-3 */
+        white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        word-wrap: break-word; /* Internet Explorer 5.5+ */
+      }
+
+      &.compact-top {
+        margin-top: 0;
+      }
+      &.compact-bottom {
+        margin-bottom: 0;
+      }
+    }
+    code {
+      font-family: 'Droid Sans Mono', 'Courier New', monospace;
+      color: black;
+    }
+    .source {
+        left: 60px;
+        top: 644px;
+        padding-right: 175px;
+
+        font-size: 15px;
+        letter-spacing: 0;
+        line-height: 18px;
+    }
+    h2 {
+        .heading();
+        font-size: 45px;
+        line-height: 45px;
+        margin-top: 500px;
+        padding-right: 40px;
+        letter-spacing: -2px;
+    }
+
+}
+
+@media screen, print {
+    .slides {
+        > article {
+            &.fill {
+                h3 {
+                    background: rgba(255, 255, 255, .75);
+                    padding-top: .2em;
+                    padding-bottom: .3em;
+                    margin-top: -.2em;
+                    margin-left: -60px;
+                    padding-left: 60px;
+                    margin-right: -60px;
+                    padding-right: 60px;
+                }
+            }
+        }
+    }
+    b {
+      font-weight: 600;
+    }
+    .blue {
+      color: rgb(0, 102, 204);
+    }
+    .yellow {
+      color: rgb(255, 211, 25);
+    }
+    .green {
+      color: rgb(0, 138, 53);
+    }
+    .red {
+      color: rgb(255, 0, 0);
+    }
+    .black {
+      color: black;
+    }
+    .white {
+      color: white;
+    }
+    img.centered {
+      margin: 0 auto;
+      display: block;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 40px;
+      th {
+        font-weight: 600;
+        text-align: left;
+      }
+      td, th {
+        border: 1px solid rgb(224, 224, 224);
+        padding: 5px 10px;
+        vertical-align: top;
+      }
+    }
+
+    h1 {
+        .heading();
+        font-size: 60px;
+        line-height: 60px;
+        margin-top: 200px;
+        padding-right: 40px;
+        letter-spacing: -3px;
+    }
+
+    h3 {
+        .heading();
+        font-size: 30px;
+        line-height: 36px;
+        padding-right: 40px;
+        letter-spacing: -1px;
+    }
+
     q {
       display: block;
       font-size: 60px;
@@ -558,123 +724,5 @@
       &::before {
         content: '—';
       }
-    }
-
-    div.questions {
-      display: block;
-      font-size: 60px;
-      line-height: 72px;
-      margin-top: 200px;
-      text-align: center;
-    }
-
-    /* Builds */
-    .build > * {
-      .build-transition();
-    }
-    .to-build {
-      opacity: 0;
-    }
-
-    .prettyprint {
-        .str, /* string content */
-        .atv { /* a markup attribute value */
-          color: rgb(0, 138, 53);
-        }
-        .kwd, /* a keyword */
-        .tag { /* a markup tag name */
-          color: rgb(0, 102, 204);
-        }
-        .com { /* a comment */
-          color: rgb(127, 127, 127);
-          font-style: italic;
-        }
-        .lit { /* a literal value */
-          color: rgb(127, 0, 0);
-        }
-        .pun, /* punctuation, lisp open bracket, lisp close bracket */
-        .opn,
-        .clo {
-          color: rgb(127, 127, 127);
-        }
-        .typ, /* a type name */
-        .atn, /* a markup attribute name */
-        .dec,
-        .var { /* a declaration; a variable name */
-          color: rgb(127, 0, 127);
-        }
-    }
-}
-
-/* Print version starts */
-@media print {
-    @page {
-        size: A4 landscape;
-    }
-    article {
-        page-break-after: always;
-        margin: auto;
-    }
-    article.next, article.past {
-        display: block;
-    }
-    body {
-        display: block !important;
-        font-family: 'Open Sans', Arial, sans-serif;
-        font-size: 14pt;
-    }
-    b {
-      font-weight: 600;
-    }
-    i {
-      font-style: italic;
-    }
-    .blue {
-      color: rgb(0, 102, 204);
-    }
-    .yellow {
-      color: rgb(255, 211, 25);
-    }
-    .green {
-      color: rgb(0, 138, 53);
-    }
-    .red {
-      color: rgb(255, 0, 0);
-    }
-    .black {
-      color: black;
-    }
-    .white {
-      color: white;
-    }
-    a {
-      color: rgb(0, 102, 204);
-    }
-    pre {
-      font-family: 'Droid Sans Mono', 'Courier New', monospace;
-      color: #AAAAAA;
-      border: 1px solid rgb(224, 224, 224);
-      overflow: hidden;
-      padding: 5px 10px;
-      font-size: 12pt;
-      &.wrap {
-        white-space: pre-wrap; /* css-3 */
-        white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
-        white-space: -pre-wrap; /* Opera 4-6 */
-        white-space: -o-pre-wrap; /* Opera 7 */
-        word-wrap: break-word; /* Internet Explorer 5.5+ */
-      }
-
-      &.compact-top {
-        margin-top: 0;
-      }
-      &.compact-bottom {
-        margin-bottom: 0;
-      }
-    }
-
-    code {
-      font-family: 'Droid Sans Mono', 'Courier New', monospace;
-      color: black;
     }
 }
