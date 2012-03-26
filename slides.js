@@ -11,7 +11,6 @@
 */
 
 var PERMANENT_URL_PREFIX = 'http://html5-slides-template.googlecode.com/git/';
-//var PERMANENT_URL_PREFIX = '../';
 
 var SLIDE_CLASSES = ['far-past', 'past', 'current', 'next', 'far-next'];
 
@@ -538,21 +537,24 @@ function addEventListeners() {
 
 /* Initialization */
 
-function addPrettify() {
-  var els = document.querySelectorAll('pre');
-  for (var i = 0, el; el = els[i]; i++) {
-    if (!el.classList.contains('noprettyprint')) {
-      el.classList.add('prettyprint');
+function addHighlighting() {
+    var el = document.createElement('script');
+    el.type = 'text/javascript';
+    el.src = 'http://yandex.st/highlightjs/6.1/highlight.min.js';
+    el.onload = function() {
+        var blocks = document.querySelectorAll('pre');
+        for (var i = 0, block; block = blocks[i]; i++) {
+            hljs.highlightBlock(block, '    ');
+        }
     }
-  }
-  
-  var el = document.createElement('script');
-  el.type = 'text/javascript';
-  el.src = PERMANENT_URL_PREFIX + 'prettify.js';
-  el.onload = function() {
-    prettyPrint();
-  }
-  document.body.appendChild(el);
+    document.body.appendChild(el);
+
+    el = document.createElement('link');
+    el.rel = 'stylesheet';
+    el.type = 'text/css';
+    el.media = 'screen';
+    el.href = 'http://yandex.st/highlightjs/6.1/styles/solarized_light.css';
+    document.body.appendChild(el);
 };
 
 function addFontStyle() {
@@ -602,7 +604,7 @@ function handleDomLoaded() {
 
   addFontStyle();
   addGeneralStyle();
-  addPrettify();
+  addHighlighting();
   addEventListeners();
 
   updateSlides();
