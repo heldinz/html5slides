@@ -11,6 +11,7 @@ var SLIDE_CLASSES = ['far-past', 'past', 'current', 'next', 'far-next'];
 var PM_TOUCH_SENSITIVITY = 15;
 
 var curSlide;
+var slideEls;
 
 /* ---------------------------------------------------------------------- */
 /* classList polyfill by Eli Grey 
