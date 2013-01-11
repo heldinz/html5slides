@@ -1,22 +1,17 @@
 /*
   Google HTML5 slides template
-
-  Authors: Luke Mahé (code)
-           Marcin Wichary (code and design)
-
-           Dominic Mazzoni (browser compatibility)
-           Charles Chen (ChromeVox support)
-
-  URL: http://code.google.com/p/html5slides/
 */
 
-var PERMANENT_URL_PREFIX = 'http://html5-slides-template.googlecode.com/git/';
+var TEMPLATE_PATH = TEMPLATE_PATH || 'template/';
+
+var PERMANENT_URL_PREFIX = '..';
 
 var SLIDE_CLASSES = ['far-past', 'past', 'current', 'next', 'far-next'];
 
 var PM_TOUCH_SENSITIVITY = 15;
 
 var curSlide;
+var slideEls;
 
 /* ---------------------------------------------------------------------- */
 /* classList polyfill by Eli Grey 
@@ -540,7 +535,7 @@ function addEventListeners() {
 function addHighlighting() {
     var el = document.createElement('script');
     el.type = 'text/javascript';
-    el.src = 'http://yandex.st/highlightjs/6.1/highlight.min.js';
+    el.src = TEMPLATE_PATH + 'highlight.min.js';
     el.onload = function() {
         var blocks = document.querySelectorAll('pre');
         for (var i = 0, block; block = blocks[i]; i++) {
@@ -553,7 +548,7 @@ function addHighlighting() {
     el.rel = 'stylesheet';
     el.type = 'text/css';
     el.media = 'screen';
-    el.href = 'http://yandex.st/highlightjs/6.1/styles/solarized_light.css';
+    el.href = TEMPLATE_PATH + 'solarized_light.css';
     document.body.appendChild(el);
 };
 
@@ -561,8 +556,7 @@ function addFontStyle() {
   var el = document.createElement('link');
   el.rel = 'stylesheet';
   el.type = 'text/css';
-  el.href = 'http://fonts.googleapis.com/css?family=' +
-            'Open+Sans:regular,semibold,italic,italicsemibold|Droid+Sans+Mono';
+  el.href = TEMPLATE_PATH + 'font.css';
 
   document.body.appendChild(el);
 };
@@ -572,7 +566,7 @@ function addGeneralStyle() {
   var el = document.createElement('link');
   el.rel = 'stylesheet';
   el.type = 'text/css';
-  el.href = PERMANENT_URL_PREFIX + 'styles.css';
+  el.href = TEMPLATE_PATH + 'styles.css';
   document.body.appendChild(el);
 
   var el = document.createElement('meta');

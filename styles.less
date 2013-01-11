@@ -173,6 +173,9 @@
         top: 0;
         position: absolute;
         -webkit-transform: translate3d(0, 0, 0);
+
+
+
         > article {
             display: none;
             position: absolute;
@@ -283,6 +286,18 @@
             }
 
         }
+        &.template-arrow-ubidreams {
+            article {
+                &:not(.nobackground):not(.biglogo) {
+                    background: url(images/arrow-ubidreams-logo-small.png) 700px 626px no-repeat;
+                    background-color: @slide-background-color;
+                }
+            &.biglogo {
+                    background: white url(images/arrow-ubidreams-logo.png) 50% 50% no-repeat;
+                }
+            }
+        }
+
     }
 
     /* Clickable/tappable areas */
