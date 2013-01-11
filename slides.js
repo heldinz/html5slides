@@ -4,13 +4,12 @@
 
 var TEMPLATE_PATH = TEMPLATE_PATH || 'template/';
 
-var PERMANENT_URL_PREFIX = '..';
-
 var SLIDE_CLASSES = ['far-past', 'past', 'current', 'next', 'far-next'];
 
 var PM_TOUCH_SENSITIVITY = 15;
 
 var curSlide;
+
 var slideEls;
 
 /* ---------------------------------------------------------------------- */
@@ -212,7 +211,7 @@ function buildNextItem() {
     return false;
   }
 
-  toBuild[0].classList.remove('to-build', '');
+  toBuild[0].classList.remove('to-build');
 
   if (isChromeVoxActive()) {
     speakAndSyncToNode(toBuild[0]);
@@ -613,7 +612,7 @@ function initialize() {
   getCurSlideFromHash();
 
   if (window['_DEBUG']) {
-    PERMANENT_URL_PREFIX = '../';
+    TEMPLATE_PATH = '../';
   }
 
   if (window['_DCL']) {

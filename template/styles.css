@@ -227,22 +227,6 @@
   .slides.layout-faux-widescreen #next-slide-area {
     margin-left: 500px;
   }
-  .slides.template-default article:not(.nobackground):not(.biglogo) {
-    background: url(images/google-logo-small.png) 710px 625px no-repeat;
-    background-color: #ffffff;
-  }
-  .slides.template-default article.biglogo {
-    background: #ffffff url(images/google-logo.png) 50% 50% no-repeat;
-  }
-  .slides.template-io2011 article:not(.nobackground):not(.biglogo) {
-    background: url(images/colorbar.png) 0 600px repeat-x, url(images/googleio-logo.png) 640px 625px no-repeat;
-    background-size: 100%, 225px;
-    background-color: #ffffff;
-  }
-  .slides.template-io2011 article.biglogo {
-    background: #ffffff url(images/googleio-logo.png) 50% 50% no-repeat;
-    background-size: 600px;
-  }
   .slides.template-akquinet article:not(.nobackground):not(.biglogo) {
     background: url(images/akquinet-logo-small.png) 700px 626px no-repeat;
     background-color: #ffffff;
@@ -328,9 +312,6 @@
   ul:first-child {
     margin-top: 0;
   }
-  ul ul {
-    margin-top: .5em;
-  }
   ul li {
     padding: 0;
     margin: 0;
@@ -341,6 +322,7 @@
     width: .75em;
     margin-left: -0.75em;
     position: absolute;
+    color: #000000;
   }
   ul li.no-bullet::before {
     content: '';
@@ -350,6 +332,12 @@
   }
   ul li pre.compact-bottom {
     margin-bottom: .5em;
+  }
+  ul ul {
+    margin-top: .5em;
+  }
+  ul ul li::before {
+    content: '-';
   }
   dd {
     margin-bottom: .5em;
