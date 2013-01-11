@@ -1,4 +1,4 @@
-# HTML5 Slide Template for Arrow Ubidreams
+# HTML5 Slide Template
 
 ## Using the template
 
