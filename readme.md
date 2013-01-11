@@ -7,11 +7,9 @@
 * Unzip the template files in _DIR/template_
 * Create _DIR/slides.html_ (you can change the name of course)
 * In the HMTL slides, load the following script:
-
     ```<script src='template/slides.js'></script>```
 	
 * Create the _section_ containing your slides:
-
 	```<section class='slides layout-regular template-arrow-ubidreams'></section>```
 		
 * Each ```<article>``` created within this section is a slide
