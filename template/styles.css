@@ -322,7 +322,7 @@
     width: .75em;
     margin-left: -0.75em;
     position: absolute;
-    color: #000000;
+    color: #666666;
   }
   ul li.no-bullet::before {
     content: '';
