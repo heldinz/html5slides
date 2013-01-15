@@ -2,14 +2,12 @@
 
 ## Using the template
 
-* Download the template project using the 'Download' button from GitHub.
-* Create a directory for your presentation
-* Unzip the template files in _DIR/template_
-* Create _DIR/slides.html_ (you can change the name of course)
-* In the HTML slides, create the _section_ containing your slides:
+* Download the template project using the 'ZIP' button from GitHub.
+* Unzip the files
+* Edit _index.html_ (you can change the name of course) to add your slides
+* Each ```<article>``` created within the following section is a slide:
 	```<section class='slides layout-regular template-akquinet'></section>```
-		
-* Each ```<article>``` created within this section is a slide
+* The ```template-akquinet``` class controls which logo appears on each slide.
 
 ## Changing the _template_ path
 
@@ -42,3 +40,8 @@ The style is developed with [LESS](http://lesscss.org/).
 
 	lessc styles.less styles.css
 	
+## Adding themes
+
+* Add logos to _templates/images_.
+* Add styles to _styles.less_ and recompile.
+* Replace the ```template-akquinet``` class in your HTML file with your new theme name.
